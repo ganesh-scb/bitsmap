@@ -78,6 +78,8 @@ class LoginForm extends React.Component {
       })
     } else if (error.response.data === 'Unauthorized user.') {
       alert('Unauthorized user!')
+    } else if (error.response.data === 'Invalid username / password.') {
+      alert('Invalid username / password.')
     }
   }
   enableSubmit = () => {
@@ -113,6 +115,7 @@ class LoginForm extends React.Component {
               value={password}
               onChange={this.handleChange('password')}
               maxLength={6}
+              type="password"
             />
             <FormHelperText className={classes.helperText}>Maximum 6 characters including atleast one special character of !, @, #, $ and one Number</FormHelperText>
           </FormControl>
